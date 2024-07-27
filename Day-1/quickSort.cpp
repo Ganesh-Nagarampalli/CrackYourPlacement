@@ -21,8 +21,8 @@ int partition(vector<int>&v, int low, int high){
     // everything in the left is smaller than pivot
     // and in the right is greater than pivot
     while(i<j){
-        while(pivot>=v[i] && i<=high-1) i++;
-        while(pivot<v[j] && j>=low+1) j--;
+        while(pivot>=v[i] && i<=high-1) i++; // pivot<=v[i]
+        while(pivot<v[j] && j>=low+1) j--;   // pivot>v[j]  to sort in descending order
         if(i<j) swap(&v[i],&v[j]);
     }
     swap(&v[low],&v[j]);
